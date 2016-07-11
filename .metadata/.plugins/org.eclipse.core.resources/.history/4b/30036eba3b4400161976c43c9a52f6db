@@ -1,0 +1,26 @@
+package p6;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.util.ArrayList;
+import java.util.List;
+
+public class Words {
+	    public static void main(String args[]){		 
+		       System.out.println("Reading File from Java code");
+		       String fileName="words.txt";
+		       try{
+		          FileReader inputFile = new FileReader(fileName);
+		          BufferedReader bufferReader = new BufferedReader(inputFile);
+		          String line;
+		          List<String>WordList= new ArrayList<>();
+		          while ((line = bufferReader.readLine()) != null)   {
+		            WordList.add(line);
+		          }
+		          bufferReader.close();
+		       }catch(Exception e){
+		          System.out.println("Error while reading file line by line:" + e.getMessage());                      
+		       }
+
+		     }
+}
